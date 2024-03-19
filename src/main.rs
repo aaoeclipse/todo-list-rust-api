@@ -27,7 +27,7 @@ async fn get_item() -> Result<String, warp::Rejection> {
     task_list.modify_status(0, StatusItem::Complete(1110099988));
     println!("TASK LIST:{:#?}", task_list);
 
-
+    task_list.access_todo(0);
 
     for item in task_list.iter_tasks() {
         // hace return el OK y no funciona en el for loop. 
